@@ -7,40 +7,65 @@
     </head> 
 <body> 
  <!-- CODE HERE   -->
-    <div class="container">
-        <?php include('inc/nav.php') ?>  <!-- Navigation -->
-        
-    <!-- CODE HERE....  -->
-    <div class="row">
-        <div class="col-sm-3">
-            <div class="panel panel-default">
-                <div class="panel-heading">Add New Data</div>
-                    <div div class="panel-body"> 
-                        <form>
-                            <div class="form-group">
-                                <label>First Name</label>
-                                <input 
-                                    type="text" 
-                                    class="form-control" 
-                                    placeholder="First Name."
-                                />
-                            </div> 
-                            <div class="form-group">
-                                <label>Last Name</label>
-                                <input 
-                                    type="text" 
-                                    class="form-control" 
-                                    placeholder="Last Name">
-                            </div> 
+    <div id = 'index'>
+        <div class="container">
+            <?php include('inc/nav.php') ?>  <!-- Navigation -->
+            
+        <!-- CODE HERE....  -->
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">Add New Data</div>
+                            <div div class="panel-body"> 
+                                <form 
+                                    action      = "actions/process.php"
+                                    method      = "post"
+                                    autocomplete= "off"
+                                >
+                                    <div class="form-group">
+                                        <label>First Name</label>
+                                        <input 
+                                            type        = "text" 
+                                            class       = "form-control" 
+                                            placeholder = "First Name."
+                                            name        = "firstname"
+                                            autofocus
+                                        />
+                                    </div> 
+                                    <div class="form-group">
+                                        <label>Last Name</label>
+                                        <input 
+                                            type        = "text" 
+                                            class       = "form-control" 
+                                            placeholder = "Last Name"
+                                            name        = "lastname"
+                                        />
+                                    </div> 
 
-                            <button type="submit" class="btn btn-default">ADD</button>
-                        </form>
-                    </div>
-                </div> 
-            </div>               
+                                    <button 
+                                        type    = "submit" 
+                                        class   = "btn btn-default"
+                                        name    = "btn_save"    
+                                        >ADD
+                                    </button> 
+
+                                    <?php 
+                                        if(isset($_SESSION['message'])){
+                                            echo $_SESSION['message'];
+                                            unset($_SESSION['message']);
+                                        }
+                                    
+                                    ?>
+                                </form>
+                            </div>
+                        </div> 
+                    </div>               
+                </div>
+            </div>
         </div>
     </div>
-
  
 <!-- ============================ FOOTER  -->
 <?php include('inc/footer.php'); ?>
+    
+ 
