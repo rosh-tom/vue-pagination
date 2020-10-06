@@ -1,9 +1,9 @@
 <?php 
-    $servername = '';
-    $username   = '';
-    $password   = '';
+    $servername =   'localhost';
+    $username   =   'root';
+    $password   =   '';
 
-    $dbname     = '';
+    $dbname     =   'pagi_sample';
 
 
 ?>
